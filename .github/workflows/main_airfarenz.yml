@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'AirfareNz'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A3E9C7C398F84C46843206D46EEE2974 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3C417D55A8C84464A83AB8C7DF0E0740 }}
