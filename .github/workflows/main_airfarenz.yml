@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'airfarenz'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6E40D8E654E84D1F8F8F7C572917EB5F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_753833D7971340A9ADD1A98E287412CC }}
