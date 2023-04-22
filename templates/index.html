@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Flight Fare Predictor</title>
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+</head>
+
+<body>
+
+
+
+    <!-- As a heading -->
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+        <br><br>
+        <h1 class="header center cyan-text">Flight Fare Prediction Web-App</h1>
+        <div class="row center">
+            <h5 class="header col s12 light">Predicts Flight Fare within seconds
+            <br>
+            </h5>
+        </div>
+            <div class="row">
+        <form action='/predict' method="post" class="col s12">
+        <div class="row">
+        
+            <div class="input-field col s4">
+            <label for="Source"><b>Source</b></label>
+                <br> 
+            <input list="Source_list" placeholder="Source City" name="Departure_Airport" id="Departure_Airport" type="text" class="validate" required="required">
+                <datalist id="Source_list">
+                <option value="Auckland"/>
+                    <option value="ChristChurch"/>
+                    <option value="Queenstown"/>
+                <option value="Wellington"/>
+                </datalist> 
+            
+            </div>
+
+            <div class="input-field col s4">
+
+            <label for="Arrival_Airport"><b>Destination </b></label>
+                <br>
+            <input list="dest_list" id="Arrival_Airport" name="Arrival_Airport" placeholder="Destination City"  type="text" class="validate" required="required"> 
+            <datalist id="dest_list">
+                <option value="Auckland"/>
+                    <option value="ChristChurch"/>
+                    <option value="Dunedin"/>
+                <option value="Nelson"/>
+                <option value="New Plymouth Airport"/>
+                <option value="Palmerston"/>
+                <option value="Wellington"/>
+                <option value="Hawkes"/>
+    
+                </datalist> 
+
+            </div>
+
+            <div class="input-field col s4">
+                <label for="_name"><b>Date and Departure Time</b></label>
+                <br>
+            <input id="Departure_Time" name="Departure_Time" type="datetime-local" class="validate" required="required">
+
+            </div>
+
+            <div class="input-field col s4">
+                <label for="third_name"><b>Airline</b></label>
+                <br>
+            <input list="airline_list" placeholder="Airline Preferred" name="Airline" id="Airline" type="text" class="validate" required="required">
+            <datalist id="airline_list">
+                <option value="Air New Zealand""/>
+                <option value="Jetstar"/>
+                <option value="Sounds Air"/>
+                
+            </datalist> 
+
+            </div>
+            <div class="input-field col s4">
+                <label for=fifth_name"><b>Stops</b></label>
+                <br>
+            <input list="stop_list" placeholder="eg. 0 means NonStop" name="Direct" id="Direct" type="text" class="validate" required="required">
+                <datalist id="stop_list">
+                <option value="0">Non-Stop</option>
+                    <option value="1"/>
+                    <option value="2"/>
+                <option value="3"/>
+                
+                </datalist> 
+
+            </div>
+
+            <div class="input-field col s4">
+                <label for=fifth_name"><b>Baggage</b></label>
+                <br>
+            <input list="bag_list" placeholder="eg. 0 means No bags" name="Baggage" id="Baggage" type="text" class="validate" required="required">
+                <datalist id="bag_list">
+                <option value="0"></option>
+                    <option value="1"/>
+                    <option value="2"/>
+                <option value="3"/>
+                
+                </datalist> 
+
+            </div>
+
+        </div>
+
+        <div class="row center">
+
+            <button type="submit" class="btn-large waves-effect waves-light cyan">Predict Flight Fare</button>
+        </div>
+        </form>
+        </div>
+                <br> {{prediction_text}}<br>
+        </div>
+    </div>  
+
+    <footer class="page-footer cyan">
+        <div class="footer-copyright">
+          <div class="container">
+          <a class="cyan-text text-lighten-3"><span>&#169;</span>2020 JPP</a>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>
